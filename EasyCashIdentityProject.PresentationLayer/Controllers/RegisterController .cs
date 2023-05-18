@@ -66,7 +66,10 @@ namespace EasyCashIdentityProject.PresentationLayer.Controllers
 					client.Authenticate("gitarisserkan@gmail.com", "okgclatwwjwdwmqy");
 					client.Send(mimeMessage);
 					client.Disconnect(true);
-					return RedirectToAction("Index", "ConfirmMail");
+
+                    TempData["Mail"] = appUserRegisterDto.Email;
+
+                    return RedirectToAction("Index", "ConfirmMail");
                 }
 				else
 				{
