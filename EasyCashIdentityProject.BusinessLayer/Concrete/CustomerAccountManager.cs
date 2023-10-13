@@ -18,6 +18,11 @@ namespace EasyCashIdentityProject.BusinessLayer.Concrete
             _customerAccountDal = customerAccountDal;
         }
 
+        public List<CustomerAccount> GetCustomerAccountsList(int id)
+        {
+            return _customerAccountDal.GetCustomerAccountsList(id);
+        }
+
         public void TDelete(CustomerAccount t)
         {
             _customerAccountDal.Delete(t);
